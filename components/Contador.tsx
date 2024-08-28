@@ -4,7 +4,8 @@ import { useState } from "react";
 export default function Contador() {
     const [cont, setCont] = useState(0);
     
-    const increment = () => { setCont(prev => prev + 1);}
+    const increase = () => { setCont(prev => prev + 1);}
+    const decrease = () => { setCont(prev => prev - 1);}
   
     return (
       <View style={{
@@ -14,7 +15,8 @@ export default function Contador() {
       }}
   >
         <Text>Contador: {cont}</Text>
-        <Pressable onPress= {increment}><Text>Increment</Text></Pressable>
+        <Pressable onPress= {increase}><Text>Increase</Text></Pressable>
+        <Pressable onPress= {decrease}><Text>Decrease</Text></Pressable>
       </View>
     )
   }
