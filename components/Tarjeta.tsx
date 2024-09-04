@@ -23,7 +23,7 @@ export interface props {
 }
 
 export function Tarjeta(props: { label: string }) {
-    let [pressed, changePressed] = useState(false); //tarjeta arranca no apretada
+    const [pressed, changePressed] = useState(false); //tarjeta arranca no apretada
     const changeState = () => {changePressed((prevState) => !prevState);} 
 
     return  ( 
