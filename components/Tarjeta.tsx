@@ -1,22 +1,6 @@
-import { Text, View, Pressable, StyleSheet } from "react-native";
+import { Text, View, Pressable } from "react-native";
 import { JSXElementConstructor, ReactElement, ReactNode, ReactPortal, useState } from "react";
-
-const styles = StyleSheet.create({
-    unpressedStyle: {
-        backgroundColor: 'beige',
-        borderWidth: 1,
-        borderColor:'black',
-        padding: 30,
-        justifyContent: 'center',
-        alignItems: 'center'},
-    pressedStyle: {
-        backgroundColor: 'green',
-        borderWidth: 1,
-        borderColor:'black',
-        padding: 30,
-        justifyContent: 'center',
-        alignItems: 'center'}
-})
+import styles from "./Styles";
 
 export interface props {
     label: string
@@ -28,8 +12,11 @@ export function Tarjeta(props: { label: string }) {
 
     return  ( 
          <Pressable onPress= {changeState} 
-            style ={pressed? (styles.pressedStyle) : (styles.unpressedStyle)}>
-                <Text>Tarjeta {props.label}</Text>
+         style={[
+            styles.pressableStyle,
+            {backgroundColor: pressed ? '#3D0B37' : '#C0D684'},
+          ]}>
+                <Text style={pressed? styles.pressedText:styles.unpressedText}>Tarjeta {props.label}</Text>
         </Pressable> 
     ) 
   }

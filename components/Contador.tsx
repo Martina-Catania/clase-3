@@ -1,31 +1,6 @@
-import { Text, View, Pressable, StyleSheet } from "react-native";
+import { Text, View, Pressable } from "react-native";
 import { useState } from "react";
-
-const styles = StyleSheet.create({
-    viewStyles: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    textStyles: {
-        color: '#000000',
-        fontSize: 32
-    },
-    increaseStyles: {
-        color: '#ffffff',
-        fontSize: 16,
-        backgroundColor: '#00ff00',
-        borderWidth: 10,
-        borderColor: '#00ff00'
-    },
-    decreaseStyles: {
-        color: '#ffffff',
-        fontSize: 16,
-        backgroundColor: '#ff0000',
-        borderWidth: 10,
-        borderColor: '#ff0000'
-    }
-})
+import styles from "./Styles";
 
 export default function Contador() {
 
@@ -34,11 +9,16 @@ export default function Contador() {
     const decrease = () => { setCont(prev => prev - 1);}
 
     return (
-      <View style={styles.viewStyles}>
-        <Text style = {styles.textStyles}>Contador: {cont}</Text>
-        <View style={{flexDirection:'row'}}>
-            <Pressable onPress= {increase}><Text style={styles.increaseStyles}>Increase</Text></Pressable>
-            <Pressable onPress= {decrease}><Text style={styles.decreaseStyles}>Decrease</Text></Pressable>
+      <View style={[styles.viewStyles, {alignItems: "center"}]}>
+        <Text style = {styles.titleText}>Contador</Text>
+        <Text style = {styles.titleText}>{cont}</Text>
+        <View style = {{flexDirection:'row'}}>
+            <Pressable onPress= {increase} style = {styles.pressableStyle}>
+                <Text style={styles.defaultText}>Increase</Text>
+            </Pressable>
+            <Pressable onPress= {decrease} style = {styles.pressableStyle}>
+                <Text style={styles.defaultText}>Decrease</Text>
+            </Pressable>
         </View>
       </View>
     )
