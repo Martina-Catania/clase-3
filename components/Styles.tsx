@@ -1,16 +1,37 @@
 import {Pressable, StyleSheet} from "react-native";
 
 const styles = StyleSheet.create({
-    viewStyles: {
-        backgroundColor:'#F3F9D2',
+    defaultViewStyle: {
+        backgroundColor:'#BBBDF6',
         display: 'flex',
         justifyContent: 'center',
         height: '100%',
         paddingHorizontal: 30,
         gap: 20
     },
+    centeredViewStyle : {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 22
+    },
+    modalView: {
+        margin: 20,
+        backgroundColor: 'BBBDF6',
+        borderRadius: 20,
+        padding: 35,
+        alignItems: 'center',
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5,
+    },
     pressableStyle: {
-        backgroundColor: '#C0D684',
+        backgroundColor: '#9893DA',
         borderWidth: 1,
         borderRadius: 20,
         borderColor:'black',
@@ -36,6 +57,11 @@ const styles = StyleSheet.create({
     },
     defaultText : {
         color: 'black',
+        fontSize: 16,
+    },
+    textInputStyle: {
+        color: 'gray',
+        textAlign: 'center',
         fontSize: 16,
     }
   });
